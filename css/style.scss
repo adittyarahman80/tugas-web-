@@ -1,0 +1,480 @@
+/* =========================
+   VARIABLES
+========================= */
+$primary: #8b0000;
+$secondary: #c1121f;
+$dark: #1f1f1f;
+$text: #333;
+$text-light: #666;
+$white: #ffffff;
+$bg: #fffaf7;
+$card: #ffffff;
+$shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+$radius: 22px;
+$transition: 0.3s ease;
+
+/* =========================
+   GLOBAL
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background:
+    radial-gradient(circle at top left, #fff 0%, transparent 30%),
+    radial-gradient(circle at bottom right, #fff 0%, transparent 30%),
+    $bg;
+  color: $text;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.spacer30 {
+  height: 30px;
+}
+
+/* =========================
+   GRID
+========================= */
+.col2 {
+  width: 50%;
+  padding: 15px;
+}
+
+.col3 {
+  width: 20%;
+  padding: 15px;
+}
+
+.col12 {
+  width: 50%;
+  padding: 15px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.btn {
+  display: inline-block;
+  padding: 13px 30px;
+  background: $primary;
+  color: $white;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: $transition;
+  box-shadow: 0 8px 20px rgba(139, 0, 0, 0.2);
+
+  &:hover {
+    background: $secondary;
+    transform: translateY(-4px);
+  }
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+  .nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+  }
+
+  .nav-brand {
+    h1,
+    h2 {
+      a {
+        font-size: 30px;
+        font-weight: 700;
+        color: $dark;
+
+        span {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .nav-menu {
+    display: flex;
+    gap: 35px;
+
+    a {
+      color: $text;
+      font-weight: 500;
+      position: relative;
+      transition: $transition;
+
+      &::after {
+        content: "";
+        width: 0;
+        height: 2px;
+        background: $primary;
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        transition: $transition;
+      }
+
+      &:hover {
+        color: $primary;
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  padding: 100px 0 80px;
+  position: relative;
+
+  .hero-desc {
+    h1 {
+      font-size: 58px;
+      line-height: 1.25;
+      margin-bottom: 20px;
+      color: $dark;
+
+      span {
+        color: $primary;
+      }
+    }
+
+    p {
+      font-size: 19px;
+      color: $text-light;
+      line-height: 1.8;
+    }
+  }
+
+  img {
+    max-width: 520px;
+    margin: auto;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
+  }
+}
+
+/* =========================
+   ABOUT
+========================= */
+.about {
+  padding: 100px 0;
+  position: relative;
+
+  .about-img {
+    img {
+      border-radius: $radius;
+      box-shadow: $shadow;
+    }
+  }
+
+  .about-desc {
+    padding-left: 40px;
+
+    h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+      line-height: 1.3;
+
+      span {
+        color: $primary;
+      }
+    }
+
+    p {
+      color: $text-light;
+      line-height: 1.9;
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+  }
+}
+
+/* =========================
+   FOOD SECTION
+========================= */
+.food {
+  padding: 90px 0;
+
+  h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+    color: $dark;
+
+    span {
+      color: $primary;
+    }
+  }
+
+  .food-card {
+    background: $card;
+    border-radius: $radius;
+    overflow: hidden;
+    box-shadow: $shadow;
+    transition: $transition;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+
+    .fc-image {
+      height: 220px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.4s;
+      }
+    }
+
+    &:hover {
+      .fc-image img {
+        transform: scale(1.08);
+      }
+    }
+
+    .fc-desc {
+      padding: 22px 22px 10px;
+
+      h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+        color: $dark;
+      }
+
+      p {
+        font-size: 14px;
+        color: $text-light;
+      }
+    }
+
+    .fc-price {
+      padding: 0 22px 22px;
+      display: flex;
+      flex-direction: column;
+
+      .price-tag {
+        font-size: 13px;
+        color: #999;
+      }
+
+      .price-num {
+        font-size: 28px;
+        font-weight: 700;
+        color: $primary;
+      }
+    }
+  }
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  background: #181818;
+  color: $white;
+  padding-top: 80px;
+  margin-top: 60px;
+
+  .row {
+    justify-content: space-between;
+  }
+
+  .footer-col {
+    width: 30%;
+    margin-bottom: 40px;
+
+    h4 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #cfcfcf;
+      line-height: 1.9;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+
+      li {
+        margin-bottom: 12px;
+
+        a {
+          color: #cfcfcf;
+          transition: $transition;
+
+          &:hover {
+            color: #ff6b6b;
+            padding-left: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .nav-brand {
+    h2 {
+      a {
+        color: $white;
+
+        span {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #333;
+    margin-top: 20px;
+    padding: 20px 0;
+    text-align: center;
+
+    p {
+      color: #999;
+      font-size: 14px;
+    }
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+  .col2,
+  .col12 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .col3 {
+    width: 50%;
+  }
+
+  .hero {
+    .hero-desc {
+      h1 {
+        font-size: 44px;
+      }
+    }
+
+    img {
+      margin-top: 40px;
+      max-width: 400px;
+    }
+  }
+
+  .about {
+    .about-desc {
+      padding-left: 0;
+      margin-top: 30px;
+      text-align: center;
+    }
+  }
+
+  .footer {
+    .footer-col {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    .nav {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .nav-menu {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+  }
+
+  .hero {
+    padding-top: 70px;
+
+    .hero-desc {
+      h1 {
+        font-size: 35px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .col3 {
+    width: 100%;
+  }
+
+  .food {
+    padding: 70px 0;
+  }
+}
