@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
 <div class="header">
@@ -24,7 +25,10 @@
             </div>
 
             <div class="profile">
-                <a href="" class="btn">Register</a>
+    <button class="cart-btn">
+        🛒
+        <span id="cart-count">0</span>
+    </button>
             </div>
         </div>
     </div>
@@ -89,6 +93,13 @@
                     <div class="fc-price">
                         <span class="price-tag">Mulai dari</span>
                         <span class="price-num">Rp 15k</span>
+
+                         <button
+                            class="add-cart"
+                            data-name="Seblak Mawi"
+                            data-price="15000">
+                            Tambah
+                        </button>
                     </div>
                 </div>
             </div>
@@ -105,6 +116,13 @@
                     <div class="fc-price">
                         <span class="price-tag">Mulai dari</span>
                         <span class="price-num">Rp 18k</span>
+
+                         <button
+                            class="add-cart"
+                            data-name="Seblak Slebew"
+                            data-price="18000">
+                            Tambah
+                        </button>
                     </div>
                 </div>
             </div>
@@ -121,6 +139,13 @@
                     <div class="fc-price">
                         <span class="price-tag">Mulai dari</span>
                         <span class="price-num">Rp 12k</span>
+
+                         <button
+                            class="add-cart"
+                            data-name="Seblak Jamsut"
+                            data-price="12000">
+                            Tambah 
+                        </button>
                     </div>
                 </div>
             </div>
@@ -137,6 +162,13 @@
                     <div class="fc-price">
                         <span class="price-tag">Mulai dari</span>
                         <span class="price-num">Rp 20k</span>
+
+                         <button
+                            class="add-cart"
+                            data-name="Seblak Hasclaw"
+                            data-price="20000">
+                            Tambah 
+                        </button>
                     </div>
                 </div>
             </div>
@@ -153,6 +185,13 @@
                     <div class="fc-price">
                         <span class="price-tag">Mulai dari</span>
                         <span class="price-num">Rp 10k</span>
+
+                         <button
+                            class="add-cart"
+                            data-name="Seblak Mojokerto"
+                            data-price="10000">
+                            Tambah 
+                        </button>
                     </div>
                 </div>
             </div>
@@ -181,6 +220,13 @@
                     <div class="fc-price">
                         <span class="price-tag">Mulai dari</span>
                         <span class="price-num">Rp 3k</span>
+
+                        <button
+                            class="add-cart"
+                            data-name="Es Teh Manis"
+                            data-price="3000">
+                            Tambah
+                        </button>
                     </div>
                 </div>
             </div>
@@ -197,6 +243,13 @@
                     <div class="fc-price">
                         <span class="price-tag">Mulai dari</span>
                         <span class="price-num">Rp 5k</span>
+
+                        <button
+                            class="add-cart"
+                            data-name="Le Mineral"
+                            data-price="5000">
+                            Tambah
+                        </button>
                     </div>
                 </div>
             </div>
@@ -212,7 +265,14 @@
                     </div>
                     <div class="fc-price">
                         <span class="price-tag">Mulai dari</span>
-                        <span class="price-num">Rp 3k</span>
+                        <span class="price-num">Rp 5k</span>
+
+                        <button
+                            class="add-cart"
+                            data-name="Es Jeruk "
+                            data-price="5000">
+                            Tambah
+                        </button>
                     </div>
                 </div>
             </div>
@@ -229,6 +289,13 @@
                     <div class="fc-price">
                         <span class="price-tag">Mulai dari</span>
                         <span class="price-num">Rp 6k</span>
+
+                        <button
+                            class="add-cart"
+                            data-name="Good day Freeze"
+                            data-price="6000">
+                            Tambah
+                        </button>
                     </div>
                 </div>
             </div>
@@ -240,11 +307,18 @@
                     </div>
                     <div class="fc-desc">
                         <h3>Es Strawberry Soda</h3>
-                        <p>Best Seller Para Ukhtea-Ukhtea</p>
+                        <p>Best Seller Dan Kece</p>
                     </div>
                     <div class="fc-price">
                         <span class="price-tag">Mulai dari</span>
                         <span class="price-num">Rp 8k</span>
+
+                        <button
+                            class="add-cart"
+                            data-name="Es Strawberry Soda"
+                            data-price="8000">
+                            Tambah
+                        </button>
                     </div>
                 </div>
             </div>
@@ -268,8 +342,8 @@
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#katalog-menu">Makanan</a></li>
-                    <li><a href="#menu-minuman">Minuman</a></li>
+                    <li><a href="#katalog-menu">Food</a></li>
+                    <li><a href="#menu-minuman">Drink</a></li>
                 </ul>
             </div>
 
@@ -287,5 +361,61 @@
     </div>
 </footer>
 
+<div class="cart-overlay"></div>
+
+<div class="cart-sidebar">
+    <div class="cart-header">
+        <h2>🛒 Keranjang</h2>
+        <button class="close-cart">✕</button>
+    </div>
+
+    <div id="cart-items"></div>
+
+    <div class="cart-footer">
+
+    <div class="customer-form">
+
+        <input type="text"
+            id="customer-name"
+            placeholder="Nama Pembeli">
+
+        <select id="spicy-level">
+            <option value="">Pilih Level Pedas</option>
+            <option value="Level 0 - Tidak Pedas">🌶️ Level 0 - Tidak Pedas</option>
+            <option value="Level 1 - Santai">🌶️ Level 1 - Santai</option>
+            <option value="Level 2 - Lumayan">🌶️ Level 2 - Lumayan</option>
+            <option value="Level 3 - Pedas">🌶️ Level 3 - Pedas</option>
+            <option value="Level 4 - Nguawor">🌶️ Level 4 - Nguawor</option>
+            <option value="Level 5 - Top Global 1">🔥 Level 5 - Top Global 1</option>
+        </select>    
+
+        <select id="order-type">
+            <option value="">Pilih Jenis Pesanan</option>
+            <option value="Makan di Tempat">🍽️ Makan di Tempat</option>
+            <option value="Take Away">🥡 Take Away</option>
+            <option value="Delivery">🛵 Delivery</option>
+        </select>
+
+        <input type="number"
+            id="table-number"
+            placeholder="Nomor Meja"
+            style="display:none;">
+
+        <textarea
+            id="customer-address"
+            placeholder="Alamat Pengiriman"
+            style="display:none;"></textarea>
+
+    </div>
+
+    <h3>Total: Rp <span id="cart-total">0</span></h3>
+
+    <button class="checkout-btn" onclick="checkoutWA()">
+        Checkout via WhatsApp
+    </button>
+
+</div>
+
+<script src="js/script.js"></script>
 </body>
 </html>
